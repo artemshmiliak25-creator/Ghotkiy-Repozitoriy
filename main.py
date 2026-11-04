@@ -6,7 +6,12 @@ def square_geom(side):
     return perimeter, area
 
 def triangle_geom(a, b, c):
-    pass
+    if a + b <= c or a + c <= b or b + c <= a:
+        return None, None
+    perimeter = a + b + c
+    p_half = perimeter / 2
+    area = math.sqrt(p_half * (p_half - a) * (p_half - b) * (p_half - c))
+    return perimeter, area
 
 def circle_geom(radius):
     pass
@@ -26,6 +31,11 @@ def main():
         a = float(input("a: "))
         b = float(input("b: "))
         c = float(input("c: "))
+        p, s = triangle_geom(a, b, c)
+        if p is None:
+            print("Трикутник із такими сторонами не існує!")
+        else:
+            print(f"Периметр трикутника: {p}, Площа: {s:.2f}")
         
     elif choice == "3":
         radius = float(input("Введіть радіус кола: "))
