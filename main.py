@@ -1,7 +1,9 @@
 import math
 
 def square_geom(side):
-    pass
+    perimeter = 4 * side
+    area = side ** 2
+    return perimeter, area
 
 def triangle_geom(a, b, c):
     pass
@@ -16,6 +18,8 @@ def main():
 
     if choice == "1":
         side = float(input("Введіть сторону квадрата: "))
+        p, s = square_geom(side)
+        print(f"Периметр квадрата: {p}, Площа: {s}")
         
     elif choice == "2":
         print("Введіть три сторони трикутника:")
