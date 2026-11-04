@@ -14,7 +14,9 @@ def triangle_geom(a, b, c):
     return perimeter, area
 
 def circle_geom(radius):
-    pass
+    length = 2 * math.pi * radius
+    area = math.pi * (radius ** 2)
+    return length, area
 
 def main():
     print("--- Геометричний калькулятор ---")
@@ -39,9 +41,12 @@ def main():
         
     elif choice == "3":
         radius = float(input("Введіть радіус кола: "))
+        l, s = circle_geom(radius)
+        print(f"Довжина кола (периметр): {l:.2f}, Площа: {s:.2f}")
         
     else:
         print("Невірний вибір!")
 
 if __name__ == "__main__":
     main()
+
